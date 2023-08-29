@@ -37,9 +37,12 @@ contract SimpleStorage {
     // People public Persona = People({favoriteNumber: 7, name: "Crome"});
 
     mapping(string => uint256) public nameToFavoriteNumber;
+
     //Memory
     //Storage
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         people.push(People(_favoriteNumber, _name));
+
+        nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 }
